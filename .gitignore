@@ -1,0 +1,5 @@
+flask
+*__pycache__*
+*.pyc
+*.db
+*migrations*

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Booking Confirm{% endblock %}
+
+  {% block content %}
+
+<!-- Bike Location Section -->
+<section id="bookconfirm" class="site">
+   <div class="container">
+     <div class="row">
+
+       <div class="form-group col-md-12">
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <div align="center">
+           <h2>Booking Confirmation</h2>
+           <h5>Your bicycle has been successfully booked!</h5>
+           <br>
+           <br>
+         </div>
+       </div>
+
+
+       <div class="form-group col-md-12">
+         <div align="center">
+
+         <h5><b>Bicycle Number :</b> {{ bicycle }}<br><br>
+         <b>Start Date :</b> {{ start }}<br><br>
+         <b>End Date : </b>{{ end }}<br><br>
+         <b>Location : </b>{{ location }}<br><br>
+         <b>Price : </b> £ {{price}}</h5>
+         <a href="/" class="wow fadeInUp smoothScroll section-btn btn btn-success" data-wow-delay="0.5s">Return to Home</a>
+
+       </div>
+     </div>
+
+      </div>
+    </div>
+</section>
+<div>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      {% endif %}
+    </ul>
+  {% endwith %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Take Payment{% endblock %}
+
+  {% block content %}
+
+
+<!-- Availability Section -->
+<section id="avl" class="site">
+  <div class="container">
+    <form action ="" method="post">
+      {{ form.hidden_tag() }}
+
+    <div class="row">
+
+      <div class="form-group col-md-12">
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+           <div align="center">
+             <h2>Find Booking</h2>
+             <h5>Please enter the booking ID.</h5>
+           <br>
+           <br>
+         </div>
+       </div>
+
+
+       <div class="form-group col-md-12">
+         <br>
+           <label for="bookingId">Booking ID</label><br>{{ form.bookingId }}
+       </div>
+
+        <div class="form-group col-md-12" align = "right" >
+          <br>
+          <br>
+          <br><input type="submit" class="btn btn-primary" value="Proceed">
+        </div>
+
+
+    </div>
+    </form>
+  </div>
+</section>
+
+<div>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      {% endif %}
+    </ul>
+  {% endwith %}
+</div>
+
+{% endblock %}

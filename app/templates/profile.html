@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Profile{% endblock %}
+
+  {% block content %}
+
+
+<!-- Availability Section -->
+<section id="avl" class="site">
+  <div class="container">
+    <div class="row">
+
+      <div class="form-group col-md-12">
+
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <div align="center">
+         <h2>Your Bookings</h2>
+         <h5 >View all your bookings.</h5>
+       <br>
+       <br>
+       <hr>
+       </div>
+      </div>
+
+      <div class="form-group col-md-12">
+
+        {% for i in accountBook %}
+            <h5> Booking {{i.id}}</h5> <br>
+
+            <b>Bike Number :</b> {{ i.bike_id }}<br><br>
+            <b>Location : </b>
+              {% if i.start_location == 1 %} University
+              {% elif i.start_location == 2 %} City
+              {% else %} Headingly
+              {% endif %}
+            <br><br>
+            <b>Start Date : </b>{{ i.start_time }}<br><br>
+            <b>End Date : </b>{{ i.end_time }}<br><br>
+            <b>Price : </b> £ {{ i.price }}<br><br>
+            <a href="/static/receipts/booking_{{ i.id }}.pdf">View your receipt</a>
+            <hr>
+
+            <!-- <b>Price : </b> {{price}}</h5> -->
+        {% endfor %}
+
+        <br>
+      </div>
+
+    </div>
+  </div>
+
+  <div>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        {% endif %}
+      </ul>
+    {% endwith %}
+  </div>
+
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Register Confirmn{% endblock %}
+
+  {% block content %}
+
+<!-- Bike Location Section -->
+<section id="bikeloc" class="site">
+   <div class="container">
+     <div class="row">
+
+       <div class="form-group col-md-12">
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <div align="center">
+           <h2>Successfully registered</h2>
+           <h5>You have been registered! </h5>
+           <br>
+           <br>
+           <a href="/login" class="wow fadeInUp smoothScroll section-btn btn btn-success" data-wow-delay="0.5s">Login</a>
+           <br>
+         </div>
+       </div>
+
+
+      </div>
+    </div>
+</section>
+
+<div>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      {% endif %}
+    </ul>
+  {% endwith %}
+</div>
+
+
+{% endblock %}

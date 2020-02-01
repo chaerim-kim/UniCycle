@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}Bike Location{% endblock %}
+
+  {% block content %}
+
+<!-- Bike Location Section -->
+<section id="bikeloc" class="site">
+   <div class="container">
+     <div class="row">
+
+       <div class="form-group col-md-12">
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <div align="center">
+           <h2>Bike Location</h2>
+           <h5>View how many bikes are at each location in total. </h5>
+           <br>
+           <br>
+         </div>
+       </div>
+
+
+       <div class="form-group center col-md-6">
+        <div align="left">
+           {% set temp = namespace(a=0) %}
+           {% for i in getLocationName %}
+
+           <h3>{{ i }}</h3>
+            <p>{{ getBikeNumber[temp.a] }} Bikes Available</p>
+              {% set temp.a = temp.a + 1 %}
+              <div class="grid">
+                <img src="../static/images/{{ i }}.jpg" width="250" height="200">
+              </div>
+              <br>
+              {% endfor %}
+              <!-- <div class="grid">
+                <img src="../static/images/.headingly.jpg" width="250" height="200">
+              </div> -->
+        </div>
+      </div>
+
+      <!-- <div class="form-group center col-md-3">
+        <br>
+        <div class="grid">
+          <img src="../static/images/.headingly.jpg" width="250" height="100">
+          <br>
+          <br>
+          <img src="../static/images/.headingly.jpg" width="250" height="100">
+          <br>
+          <br>
+          <img src="../static/images/.headingly.jpg" width="250" height="100">
+
+        </div>
+
+      </div> -->
+
+          <div class="form-group center col-md-6">
+            <br>
+            <div align="center">
+              <br>
+              <br>
+              <br>
+              <br>
+              <iframe src="https://www.google.com/maps/d/embed?mid=1QR9KFlg69h7WAGJiYGX27Au2E8XP30SY" width="600" height="500"></iframe>
+            </div>
+
+    </div>
+
+
+   </div>
+</section>
+
+<div>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      {% endif %}
+    </ul>
+  {% endwith %}
+</div>
+
+{% endblock %}

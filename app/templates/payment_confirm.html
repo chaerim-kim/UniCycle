@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Payment Confirmn{% endblock %}
+
+  {% block content %}
+
+<!-- Bike Location Section -->
+<section id="payment" class="site">
+   <div class="container">
+     <div class="row">
+
+       <div class="form-group col-md-12">
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <div align="center">
+           <h2>Successful Payment</h2>
+           <h5>Payment has been made. </h5>
+           <br>
+           <br>
+           <a href="/" class="wow fadeInUp smoothScroll section-btn btn btn-success" data-wow-delay="0.5s">Home</a>
+           <br>
+         </div>
+       </div>
+
+
+      </div>
+    </div>
+</section>
+
+
+<div>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      {% endif %}
+    </ul>
+  {% endwith %}
+</div>
+
+
+{% endblock %}

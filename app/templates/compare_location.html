@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}Compare Locations{% endblock %}
+
+  {% block content %}
+
+
+<!-- Availability Section -->
+<section id="avl" class="site">
+   <div class="container">
+     <form action ="" method="post" name="hireform">
+       {{ form.hidden_tag() }}
+        <div class="row">
+
+       <div class="form-group col-md-12">
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <div align="center">
+           <h2>Compare Bookings per Location</h2>
+           <h5>Compare the number of bicycles hired in a given time period per location.</h5>
+         <br>
+         <br>
+         </div>
+       </div>
+
+
+        <div class="form-group col-md-5" >
+          <label for="date">Start Date:</label><br>{{ form.StartDate }}
+        </div>
+
+        <div class="form-group col-md-5">
+          <label for="date">End Date:</label><br>{{ form.EndDate }}
+        </div>
+
+        <div class="form-group col-md-2">
+          <br>
+          <input type="submit" class="btn btn-primary" onClick="history.go(0)" value="Search">
+          <br>
+          <br>
+        </div>
+
+       <div class ="form-row">
+         <div class="form-group col-md-12">
+           <hr>
+           <br>
+         </div>
+       </div>
+
+       <div class="form-group col-md-12">
+         <h3>Bikes Hired Per Location: </h3>
+
+            {% for j in LIArray %}
+              <p>{{ j }}</p>
+            {% endfor %}
+       </div>
+
+       <div class="form-group col-md-12">
+         <h3>Total Number of Bikes Hired:</h3>
+          <p>{{ overallHired }} bikes</p>
+         <img src="../static/images/graphs/OverallGraph.png" alt="Overall graph" height="300" width="1300"> <br>
+         <img src="../static/images/graphs/Location1Graph.png" alt="Location 1 graph" height="300" width="1300"> <br>
+         <img src="../static/images/graphs/Location2Graph.png" alt="Location 2 graph" height="300" width="1300"> <br>
+         <img src="../static/images/graphs/Location3Graph.png" alt="Location 3 graph" height="300" width="1300"> <br>
+      </div>
+
+   </div>
+ </form>
+ </div>
+
+   </div>
+</section>
+
+<div>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      {% endif %}
+    </ul>
+  {% endwith %}
+</div>
+
+{% endblock %}

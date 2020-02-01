@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}View Receipts{% endblock %}
+
+  {% block content %}
+
+
+<!-- Availability Section -->
+<section id="avl" class="site">
+  <div class="container">
+    <div class="row">
+
+      <div class="form-group col-md-12">
+
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <div align="center">
+         <h2>View Receipts for All Bookings</h2>
+         <h5 >View all customer booking receipts.</h5>
+       <br>
+       <br>
+       </div>
+      </div>
+
+      <div class="form-group col-md-12">
+
+        {% for i in accountBook %}
+            <h5> Booking {{ i.id }}
+              &nbsp &nbsp &nbsp
+              <a href="/static/receipts/booking_{{ i.id }}.pdf">View your receipt</a>
+            </h5>
+            <hr>
+
+
+            <!-- <b>Price : </b> {{price}}</h5> -->
+        {% endfor %}
+
+        <br>
+      </div>
+
+    </div>
+  </div>
+
+  <div>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        {% endif %}
+      </ul>
+    {% endwith %}
+  </div>
+
+
+{% endblock %}

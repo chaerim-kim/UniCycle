@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}Booking form{% endblock %}
+
+  {% block content %}
+
+<!-- Booking Section -->
+<section id="book" class="site">
+  <div class="container">
+    <form action ="" method="post" name="hireform">
+      {{ form.hidden_tag() }}
+
+
+      <div class="row">
+        <div class="form-group col-md-12">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <div align="center">
+            <h2>Book a Bike</h2>
+            <h5>Enter booking details to book a bike.</h5>
+            <br>
+          </div>
+        </div>
+
+
+        <div class="form-group col-md-6 offset-md-6">
+          <h3>Personal Details</h3>
+          <br>
+            <label for="firstname">First Name</label><br>{{ form.CustomerFirstName }}
+            <br>
+            <br>
+            <label for="surname">Surname</label><br>{{ form.CustomerLastName }}
+            <br>
+            <br>
+            <label for="email">Email</label><br>{{ form.CustomerEmail }}
+            <br>
+            <br>
+            <label for="address1">Address 1</label><br>{{ form.CustomerAddress1 }}
+            <br>
+            <br>
+            <label for="address2">Address 2</label><br>{{ form.CustomerAddress2 }}
+            <br>
+            <br>
+            <label for="city">City</label><br>{{ form.CustomerCity }}
+            <br>
+            <br>
+            <label for="postcode">Postcode</label><br>{{ form.CustomerPostcode }}
+        </div>
+
+        <div class="form-group col-md-6 offset-md-6">
+          <h3>Card Details</h3>
+          <br>
+            <label for="cardname">Card Name</label><br>{{ form.CardHolderName }}
+            <br>
+            <br>
+            <div class ="card">
+            <label for="cardtype" class="card">Card Type</label><br>{{ form.CardType }}
+            </div>
+            <div class="form-check"></div>
+            <label for="cardnumber">Card Number</label><br>{{ form.CardNumber }}
+            <br>
+            <br>
+            <label for="expiry">Expiry Date</label><br>{{ form.CardExpireDate }}
+            <br>
+            <br>
+            <label for="cvv">CVV</label><br>{{ form.CardCVV }}
+            <br>
+            <br>
+            {% if loggedIn != 0 %}
+            {{ form.SaveCard }}<label for="checkbox">&nbsp;&nbsp;Save Card Details</label>
+            {% else %}
+            <br>
+            {% endif %}
+            <br>
+            <br>
+            <input type="submit" class="btn btn-primary" value="Proceed">
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+  <div>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        {% endif %}
+      </ul>
+    {% endwith %}
+  </div>
+
+
+  {% endblock %}

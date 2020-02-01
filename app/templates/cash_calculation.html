@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}Cash Calculation{% endblock %}
+
+  {% block content %}
+
+<!-- Availability Section -->
+<section id="avl" class="site">
+  <div class="container">
+    <form action ="" method="post" >
+      {{ form.hidden_tag() }}
+        <div class="row">
+
+      <div class="form-group col-md-12">
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <div align="center">
+         <h2>Take Payment</h2>
+         <h5>Please enter the cash received from the customer.</h5>
+         <br>
+         <br>
+       </div>
+      </div>
+
+      <div class="form-group col-md-12">
+        <p><b>Bike Number :</b> {{ bicycle }}</p>
+        <p><b>Location : </b>
+        {% if location == 1 %} University
+        {% elif location == 2 %} City
+        {% else %} Headingly
+        {% endif %}
+        </p>
+        <p><b>Start Date : </b>{{ start }}</p>
+        <p><b>End Date : </b>{{ end }}</p>
+        <p><b>Price : </b></p><p id = "price">{{ price }}</p>
+      </div>
+
+
+      <div class="form-group col-md-12">
+        <div class= "checkout">
+          <hr>
+          <br>
+
+          <label for="cash_received"><b>Cash Received</b></label><br>{{ form.cash_received }}
+          <br>
+          <br>
+          <p id= "change" > Change Due : £ </p>
+        </div>
+      </div>
+
+      <div class="form-group col-md-12" align = "right" >
+        <br>
+        <br>
+        <br><input type="submit" class="btn btn-primary" value="Confirm">
+      </div>
+
+    </div>
+  </form>
+  </div>
+</section>
+
+
+  <div>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        {% endif %}
+      </ul>
+    {% endwith %}
+  </div>
+
+{% endblock %}

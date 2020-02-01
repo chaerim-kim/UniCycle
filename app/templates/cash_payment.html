@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Cash Payment{% endblock %}
+
+  {% block content %}
+
+<!-- Bike Location Section -->
+<section id="bookconfirm" class="site">
+   <div class="container">
+     <form action ="" method="post" >
+       {{ form.hidden_tag() }}
+         <div class="row">
+
+           <div class="form-group col-md-12">
+             <br>
+             <br>
+             <br>
+             <br>
+             <br>
+             <div align="center">
+               <h2>Cash Payment</h2>
+               <h5>Payment to be received in cash for bookings</h5>
+               <br>
+               <br>
+             </div>
+             <div class="form-group col-md-12">
+               <h3>Personal Details</h3>
+               <br>
+                 <label for="firstname">First Name</label><br>{{ form.FirstName }}
+                 <br>
+                 <br>
+                 <label for="surname">Surname</label><br>{{ form.LastName }}
+                 <br>
+                 <br>
+                 <label for="email">Email</label><br>{{ form.Email }}
+             </div>
+
+             <div class="form-group col-md-12" align = "right" >
+               <br>
+               <br>
+               <br><input type="submit" class="btn btn-primary" value="Proceed">
+             </div>
+
+
+       </div>
+
+        </div>
+      </form>
+    </div>
+</section>
+
+<div>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      {% endif %}
+    </ul>
+  {% endwith %}
+</div>
+
+{% endblock %}

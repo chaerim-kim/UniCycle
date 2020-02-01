@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+  {% block content %}
+
+<!-- Home Section -->
+<section id="home" class="parallax-section">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-6 col-sm-6">
+              <div class="home-img" alt="Unicycle logo with Parkinsons building."></div>
+         </div>
+
+         <div class="col-md-6 col-sm-6">
+            <div class="home-thumb">
+               <div class="section-title">
+                  <h4 class="wow fadeInUp">Welcome to UniCycle</h4>
+                  <h1 class="wow fadeInUp" ><strong>Bike Rental</strong> made easy.</h1>
+                  <p class="wow fadeInUp">Welcome to University of Leeds bike rental website.</p>
+                  <a href="about" class="wow fadeInUp smoothScroll section-btn btn btn-success" data-wow-delay="0.5s">About us</a>
+               </div>
+            </div>
+         </div>
+
+
+       </div>
+   </div>
+</section>
+
+<div>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      {% endif %}
+    </ul>
+  {% endwith %}
+</div>
+
+{% endblock %}
