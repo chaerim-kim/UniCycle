@@ -2,9 +2,12 @@
 
 🚲 Hire bicycle from main spots of Leeds - view, book, and pay all in one go!
 
-UniCycle can be accessed [here](https://leedsunicycle.pythonanywhere.com/)! 
+UniCycle can be accessed [here](https://leedsunicycle.pythonanywhere.com/)!
 
-![https://user-images.githubusercontent.com/33334078/100372987-6466b600-304d-11eb-9dad-2b410f2b53c0.png](https://user-images.githubusercontent.com/33334078/100372987-6466b600-304d-11eb-9dad-2b410f2b53c0.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/33334078/100372987-6466b600-304d-11eb-9dad-2b410f2b53c0.png" style="width:70%; height:70%"/>
+</p>
+
 
 ## 🎨 Features / 주요 기능
 
@@ -14,15 +17,29 @@ UniCycle can be accessed [here](https://leedsunicycle.pythonanywhere.com/)!
 
 **The menu options for different users are as followings:**
 
-[Untitled](https://www.notion.so/e2cf9ff0dc3b403998aadb82cc948d85)
+| **Guest User** | **Registered User** | **Employee** | **Admin** |
+| ------ | ------ | ------ | ------ |
+| Home | Home | Home | Home |
+| About | About | About | About |
+| Bike Location | Bike Location | Bike Location | Bike Location |
+| Bike Availability | Bike Availability | Bike Availability | Bike Availability |
+| Book A Bike | Book A Bike | Book A Bike | Book A Bike |
+| Register | Profile | Take Payment | Compare Locations  |
+| Login | Logout | View Receipts | View Income |
+| Staff Login |  | Logout | Logout |
+
 
 ## 🐾 Examples / 사용 예제
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/33334078/100372696-f9b57a80-304c-11eb-91bd-b957dd74783a.gif" />
+</p>
 
-![https://user-images.githubusercontent.com/33334078/100372696-f9b57a80-304c-11eb-91bd-b957dd74783a.gif](https://user-images.githubusercontent.com/33334078/100372696-f9b57a80-304c-11eb-91bd-b957dd74783a.gif)
 
 ### Mobile view
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/33334078/100372854-35e8db00-304d-11eb-9ac7-28423e7701d2.gif" />
+</p>
 
-![https://user-images.githubusercontent.com/33334078/100372854-35e8db00-304d-11eb-9ac7-28423e7701d2.gif](https://user-images.githubusercontent.com/33334078/100372854-35e8db00-304d-11eb-9ac7-28423e7701d2.gif)
 
 ## 📚 Stack / 개발 환경
 
