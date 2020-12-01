@@ -5,7 +5,7 @@
 UniCycle can be accessed [here](https://leedsunicycle.pythonanywhere.com/)!
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/33334078/100372987-6466b600-304d-11eb-9dad-2b410f2b53c0.png" style="width:70%; height:70%"/>
+  <img src="https://user-images.githubusercontent.com/33334078/100700961-0be34000-33e2-11eb-82cd-e4b9c640dfc6.jpg"/>
 </p>
 
 
