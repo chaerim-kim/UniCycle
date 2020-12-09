@@ -15,3 +15,5 @@ def main(args):
 if __name__ == '__main__':
     import sys
     sys.exit(main(sys.argv))
+
+    # account = models.Account(surname=adSur, username=admin, firstname=adFir, password=Password01, account_type=a1)

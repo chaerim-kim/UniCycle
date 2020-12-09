@@ -23,6 +23,15 @@ booking = None
 def index():
     loggedIn= isLoggedIn()
 
+    # newPassword = hashPassword("Password01")
+    #
+    # adminuser = models.Account(surname="adSur", username="admin", firstname="adFir", password=newPassword, account_type=1)
+    # staffuser = models.Account(surname="staffSur", username="staff", firstname="staffFir", password=newPassword, account_type=2)
+    #
+    # db.session.add(adminuser)
+    # db.session.add(staffuser)
+    # db.session.commit()
+
     return render_template('home_page.html', loggedIn = loggedIn)
 
 # Displays the about page
@@ -194,15 +203,15 @@ def cash():
 
                 img_str = base64.b64encode(buffered.getvalue())
 
-                sendEmail("Your UniCycle Booking Receipt", ADMINS[0], [form.Email.data], str(book),
-                          render_template("receipt.html",
-                                          name=form.FirstName.data,
-                                          bicycle=data[0],
-                                          start=data[2],
-                                          end=data[3],
-                                          location=location,
-                                          qr=img_str.decode('utf-8'),
-                                          price=str(price)))
+                # sendEmail("Your UniCycle Booking Receipt", ADMINS[0], [form.Email.data], str(book),
+                #           render_template("receipt.html",
+                #                           name=form.FirstName.data,
+                #                           bicycle=data[0],
+                #                           start=data[2],
+                #                           end=data[3],
+                #                           location=location,
+                #                           qr=img_str.decode('utf-8'),
+                #                           price=str(price)))
 
                 return render_template('booking_confirm.html',
                                        bicycle=data[0],
@@ -294,15 +303,15 @@ def hireform():
 
                     img_str = base64.b64encode(buffered.getvalue())
 
-                    sendEmail("Your UniCycle Booking Receipt", ADMINS[0], [form.CustomerEmail.data], str(book),
-                              render_template("receipt.html",
-                                              name=form.CustomerFirstName.data,
-                                              bicycle=data[0],
-                                              start=data[2],
-                                              end=data[3],
-                                              location=location,
-                                              qr=img_str.decode('utf-8'),
-                                              price=str(price)))
+                    # sendEmail("Your UniCycle Booking Receipt", ADMINS[0], [form.CustomerEmail.data], str(book),
+                    #           render_template("receipt.html",
+                    #                           name=form.CustomerFirstName.data,
+                    #                           bicycle=data[0],
+                    #                           start=data[2],
+                    #                           end=data[3],
+                    #                           location=location,
+                    #                           qr=img_str.decode('utf-8'),
+                    #                           price=str(price)))
 
                     return render_template('booking_confirm.html',
                                            bicycle=data[0],
@@ -312,7 +321,7 @@ def hireform():
                                            price=str(price),
                                            loggedIn=loggedIn)
             except:
-                flash("An error occurred and your bicycle has not been booked.")
+                flash("An error occurred and your bicycle has not been booked - in the payment.")
 
     return render_template('booking_form.html',
                            form=form,
@@ -824,7 +833,7 @@ def hashPassword(password):
     return hashedPassword
 
 # Creates an account in the database
-def addAccount( surname, firstname,username,password):
+def addAccount( surname, firstname, username,password):
     from app import db, models
 
     newPassword = hashPassword(password)
